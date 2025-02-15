@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Screen2() {
+function Screen2({ exerciseName }) {
     return (
         <>
             <div>
                 <h1>EXERCISE HERO</h1>
-                <h1>Welcome to the running screen</h1>
-                {/* pass in name as prop */}
+                <h4>You chose: {exerciseName}</h4>
+                {/* code in timer */}
             </div>
         
         </>

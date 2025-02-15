@@ -7,7 +7,7 @@ function Screen1({ exerciseName }) {
                 <h1>EXERCISE HERO</h1>
                 <h2>You chose: </h2>
                 <h5>{exerciseName}</h5>
-                {/* pass in name as prop */}
+                {/* code in counter */}
             </div>
         
         </>

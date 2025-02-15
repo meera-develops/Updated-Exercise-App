@@ -36,7 +36,7 @@ function App() {
   } else if (curScreen === 'Screen2') {
     screenContent = (
       <>
-        <Screen2 />
+        <Screen2 exerciseName={curName}/>
         <button onClick={returnHome}>Back to Menu</button>
       </>
     );
@@ -51,14 +51,17 @@ function App() {
               <img src={pushups} alt="Image of woman in the beginning of push-up position" />
                 <button className='text-buttons' onClick={() => {
                   handleNavigation('Screen1');
-                  displayName('Duration Exercise');
+                  displayName('Repetition Based Exercise');
                 }}>
                   Push-ups
                 </button>
             </div>
             <div className='image-item'>
               <img src={running} alt="Image of man running outside" />
-              <button className='text-buttons' onClick={() => handleNavigation('Screen2')}>
+              <button className='text-buttons' onClick={() => {
+                  handleNavigation('Screen2');
+                  displayName('Time Based Exercise');
+                }}>
                 Running
               </button>
             </div>
