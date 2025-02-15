@@ -5,6 +5,24 @@
   text-align: center;
 }
 
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-buttons {
+  margin-top: 20px;
+  font-weight: 900;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
