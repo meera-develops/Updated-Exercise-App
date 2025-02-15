@@ -51,7 +51,7 @@ function App() {
               <img src={pushups} alt="Image of woman in the beginning of push-up position" />
                 <button className='text-buttons' onClick={() => {
                   handleNavigation('Screen1');
-                  displayName('Repetition Based Exercise');
+                  displayName('Rep Count');
                 }}>
                   Push-ups
                 </button>
@@ -60,7 +60,7 @@ function App() {
               <img src={running} alt="Image of man running outside" />
               <button className='text-buttons' onClick={() => {
                   handleNavigation('Screen2');
-                  displayName('Time Based Exercise');
+                  displayName('Time Based Exercises');
                 }}>
                 Running
               </button>

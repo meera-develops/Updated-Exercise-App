@@ -5,8 +5,7 @@ function Screen1({ exerciseName }) {
         <>
             <div className='main-container'>
                 <h1>EXERCISE HERO</h1>
-                <h2>You chose: </h2>
-                <h5>{exerciseName}</h5>
+                <h1>{exerciseName}</h1>
                 {/* code in counter */}
             </div>
         
