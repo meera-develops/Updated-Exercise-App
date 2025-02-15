@@ -16,13 +16,32 @@ function App() {
     setCurScreen(screen);
   };
 
+  const returnHome = () => {
+    setCurScreen(null);
+  }
+
   let screenContent;
   if (curScreen === 'Screen1') {
-    screenContent = <Screen1 />;
+    screenContent = (
+    <>
+      <Screen1 />
+      <button onClick={returnHome}>Back to Menu</button>
+    </>
+  );
   } else if (curScreen === 'Screen2') {
-    screenContent = <Screen2 />
+    screenContent = (
+      <>
+        <Screen2 />
+        <button onClick={returnHome}>Back to Menu</button>
+      </>
+    );
   } else if (curScreen === 'Screen3') {
-    screenContent = <Screen3 />
+    screenContent = (
+      <>
+        <Screen3 />
+        <button onClick={returnHome}>Back to Menu</button>
+      </>
+    );
   } else {
     screenContent = (
       <>
