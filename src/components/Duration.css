@@ -21,4 +21,40 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 5rem;
+    text-shadow: 2px 2px 2px #aea4fc98;
+    /* margin-bottom: 5px; */
+}
+
+.buttons button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 120px;
+    /* border: none; */
+    transition: background-color 0.5s ease;
+}
+
+.start-time {
+    background-color: #4d6150;
+}
+
+.start-time:hover {
+    background-color: #90B494;
+}
+
+.stop-time {
+    background-color: #74182f;
+}
+
+.stop-time:hover {
+    background-color: #AB2346;
+}
+
+.reset-time {
+    background-color: #23239d;
+}
+
+.reset-time:hover {
+    background-color: #3737F5;
 }
