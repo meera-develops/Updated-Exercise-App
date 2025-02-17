@@ -13,6 +13,7 @@ body {
     border-radius: 50px;
     background-color: black;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .view {
@@ -22,7 +23,6 @@ body {
     font-style: normal;
     font-size: 5rem;
     text-shadow: 2px 2px 2px #aea4fc98;
-    /* margin-bottom: 5px; */
 }
 
 .buttons button {

@@ -11,23 +11,47 @@ function Screen2({ exerciseName }) {
 
     useEffect(() => {
 
+        if(isStarted) {
+            intIdRef.current = setInterval(() => {
+                setElapsedTime(Date.now() - startTimeRef.current);
+            }, 10);
+        }
+
+        return () => {
+            clearInterval(intIdRef.current);
+        } 
+        // clears the current interval so program stops running
+
     }, [isStarted]);
 
     function start() {
-
+        setStarted(true);
+        startTimeRef.current = Date.now() - elapsedTime;
+        // subtracts current time from Epic, when the computer thinks time started
+        // console.log(startTimeRef.current);
     }
 
     function stop() {
-
+        setStarted(false); //change property to false to stop the timer from running 
     }
 
     function reset() {
-
+        setElapsedTime(0);
+        setStarted(false);
     }
 
     function formatTime() {
-        
-        return `00:00:00`
+        //let hours = Math.floor(elapsedTime / (1000 * 60 * 60)); 
+        let minutes = Math.floor(elapsedTime / (1000 * 60) % 60); 
+        let seconds = Math.floor(elapsedTime / (1000) % 60);
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10)
+
+        minutes = String(minutes).padStart(2, "0");
+        seconds = String(seconds).padStart(2, "0");
+        milliseconds = String(milliseconds).padStart(2, "0");
+
+
+        return `${minutes}:${seconds}:${milliseconds}`;
     }
 
 
