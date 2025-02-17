@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Repetition.css";
+import "./index.css";
 
 function Screen1({ exerciseName }) {
   const [count, setCount] = useState(0);
@@ -23,7 +23,7 @@ function Screen1({ exerciseName }) {
       <div className="main-container">
         <h1>EXERCISE HERO</h1>
         <h1>{exerciseName}</h1>
-        <h2 style={{ fontSize: "4rem" }}>{String(count).padStart(2, "0")}</h2>
+        <h2 style={{ fontSize: "4rem" }} className='value'>{String(count).padStart(2, "0")}</h2>
         <div className="button-container">
           <button className="my-button" onClick={increaseCount}>
             +1

@@ -3,8 +3,8 @@ import './App.css'
 import pushups from './assets/img/pushups-pic.png';
 import planks from './assets/img/planks.png';
 import running from './assets/img/running.png';
-import Screen1 from './components/RepetitionExercise.jsx';
-import Screen2 from './components/DurationExercise.jsx';
+import Screen1 from './components/RepetitionExercise/index.jsx';
+import Screen2 from './components/DurationExercise/index.jsx';
 
 
 function App() {

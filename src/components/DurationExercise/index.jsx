@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
 // reference code from https://www.youtube.com/watch?v=jPo0mIcNZfM
-import "./Duration.css";
+//used code to help understand these React hooks better and how to implement them to make a successful timer
+//this youtuber explains concepts in details and tells you what every line of code is doing to help viewers understand
+
+import React, { useState, useEffect, useRef } from 'react';
+import "./index.css";
 
 function Screen2({ exerciseName }) {
 
