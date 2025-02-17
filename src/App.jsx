@@ -60,7 +60,7 @@ function App() {
               <img src={running} alt="Image of man running outside" />
               <button className='text-buttons' onClick={() => {
                   handleNavigation('Screen2');
-                  displayName('Time Based Exercises');
+                  displayName('Time-Based Exercises');
                 }}>
                 Running
               </button>
