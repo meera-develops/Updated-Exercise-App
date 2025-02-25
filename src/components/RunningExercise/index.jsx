@@ -2,6 +2,8 @@
 //used code to help understand these React hooks better and how to implement them to make a successful timer
 //this youtuber explains concepts in details and tells you what every line of code is doing to help viewers understand
 
+//included lap state, lap mapping, and lap funcition in order to implement the runningComponent
+
 import React, { useState, useEffect, useRef } from 'react';
 import "./index.css";
 
@@ -11,6 +13,7 @@ function Screen2({ exerciseName }) {
     const [elapsedTime, setElapsedTime] = useState(0);
     const intIdRef = useRef(null);
     const startTimeRef = useRef(0);
+    const [laps, setLaps] = useState([]);
 
     useEffect(() => {
 
@@ -18,6 +21,8 @@ function Screen2({ exerciseName }) {
             intIdRef.current = setInterval(() => {
                 setElapsedTime(Date.now() - startTimeRef.current);
             }, 10);
+        } else {
+            clearInterval(intIdRef.current);
         }
 
         return () => {
@@ -38,12 +43,27 @@ function Screen2({ exerciseName }) {
         setStarted(false); //change property to false to stop the timer from running 
     }
 
+    function lap() {
+        if (laps.length === 0) {
+            setLaps([elapsedTime]);
+        } else {
+            const lastLapTime = laps[laps.length - 1];
+            //const curLapTime = Date.now();
+            const lapDuration = elapsedTime - lastLapTime;
+
+            setLaps([...laps, elapsedTime]);
+        }
+
+        //startTimeRef.current = Date.now() - elapsedTime;
+    }
+
     function reset() {
         setElapsedTime(0);
         setStarted(false);
+        setLaps([]);
     }
 
-    function formatTime() {
+    function formatTime(elapsedTime) {
         //let hours = Math.floor(elapsedTime / (1000 * 60 * 60)); 
         let minutes = Math.floor(elapsedTime / (1000 * 60) % 60); 
         let seconds = Math.floor(elapsedTime / (1000) % 60);
@@ -66,7 +86,7 @@ function Screen2({ exerciseName }) {
                     <h1>{exerciseName}</h1>
                 </div>
                 <div className='myTimer'>
-                    <div className='myView'>{formatTime()}</div>
+                    <div className='myView'>{formatTime(elapsedTime)}</div>
                     <div className='myButtons'>
                         <button onClick={start} className='my-start-time'>
                             Start
@@ -77,6 +97,19 @@ function Screen2({ exerciseName }) {
                         <button onClick={reset} className='my-reset-time'>
                             Reset
                         </button>
+                        <button onClick={lap} className='my-lap'>
+                            Lap
+                        </button>
+                        <ul class-name="count">
+                        {laps.map((lap, index) => {
+                            const lapDuration = index === 0 ? lap : lap - laps[index - 1];
+                        return (
+                            <li key={index} className='my-lap-count'>
+                                Lap {index + 1}: {formatTime(lapDuration)}
+                            </li>
+                            )
+                        })}
+                        </ul>
                     </div>
 
                 </div>
