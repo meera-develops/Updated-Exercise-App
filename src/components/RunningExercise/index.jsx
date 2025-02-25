@@ -5,7 +5,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./index.css";
 
-function Screen3({ exerciseName }) {
+function Screen2({ exerciseName }) {
 
     const [isStarted, setStarted] = useState(false);
     const [elapsedTime, setElapsedTime] = useState(0);
@@ -60,21 +60,21 @@ function Screen3({ exerciseName }) {
 
     return (
         <>
-            <div className='main-container'>
-                <div className='header-content'>
+            <div className='my-main-container'>
+                <div className='my-header-content'>
                     <h1>EXERCISE HERO</h1>
                     <h1>{exerciseName}</h1>
                 </div>
-                <div className='timer'>
-                    <div className='view'>{formatTime()}</div>
-                    <div className='buttons'>
-                        <button onClick={start} className='start-time'>
+                <div className='myTimer'>
+                    <div className='myView'>{formatTime()}</div>
+                    <div className='myButtons'>
+                        <button onClick={start} className='my-start-time'>
                             Start
                         </button>
-                        <button onClick={stop} className='stop-time'>
+                        <button onClick={stop} className='my-stop-time'>
                             Stop
                         </button>
-                        <button onClick={reset} className='reset-time'>
+                        <button onClick={reset} className='my-reset-time'>
                             Reset
                         </button>
                     </div>
@@ -86,4 +86,4 @@ function Screen3({ exerciseName }) {
     )
 }
 
-export default Screen3;
+export default Screen2;

@@ -4,7 +4,8 @@ import pushups from './assets/img/pushups-pic.png';
 import planks from './assets/img/planks.png';
 import running from './assets/img/running.png';
 import Screen1 from './components/RepetitionExercise/index.jsx';
-import Screen2 from './components/DurationExercise/index.jsx';
+import Screen2 from './components/RunningExercise/index.jsx';
+import Screen3 from './components/DurationExercise/index.jsx';
 
 
 function App() {
@@ -40,6 +41,13 @@ function App() {
         <button onClick={returnHome}>Back to Menu</button>
       </>
     );
+  } else if (curScreen === 'Screen3') {
+    screenContent = (
+      <>
+        <Screen3 exerciseName={curName}/>
+        <button onClick={returnHome}>Back to Menu</button>
+      </>
+    );
   } else {
     screenContent = (
       <>
@@ -68,7 +76,7 @@ function App() {
             <div className='image-item'>
               <img src={planks} alt="Image of woman holding a plank" /> 
               <button className='text-buttons' onClick={() => {
-                handleNavigation('Screen2');
+                handleNavigation('Screen3');
                 displayName('Planks');
                 }}>
                 Planks
